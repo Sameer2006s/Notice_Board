@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Noticeboard — Secure Add</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Campus Noticeboard</h1>
+        <p class="muted">Simple • Local • Fast</p>
+      </div>
+      <div class="actions">
+        <button id="unlockBtn" class="btn primary">Unlock Add Notice</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="card add-card locked" id="addCard" aria-hidden="true">
+        <h3>Add Notice</h3>
+        <p class="hint">Click "Unlock Add Notice" to enter password and open this form.</p>
+
+        <form id="addForm" class="add-form" novalidate>
+          <label for="ntitle">Notice title</label>
+          <input id="ntitle" name="title" placeholder="Notice title" autocomplete="off" />
+
+          <label for="ntext">Notice content</label>
+          <textarea id="ntext" name="text" placeholder="Write the notice..." rows="5"></textarea>
+
+          <div class="form-row">
+            <button id="addBtn" type="button" class="btn primary">Save Notice</button>
+            <button id="lockBtn" type="button" class="btn ghost">Lock</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card list-card" aria-live="polite">
+        <h3>All Notices</h3>
+        <div id="list" class="list"></div>
+      </section>
+    </main>
+
+    <div id="pwdModal" class="modal" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h4 id="modalTitle">Enter password to unlock</h4>
+        <input id="pwdInput" type="password" placeholder="Password" autocomplete="off" />
+        <div class="modal-actions">
+          <button id="pwdSubmit" class="btn primary">Unlock</button>
+          <button id="pwdCancel" class="btn ghost">Cancel</button>
+        </div>
+        <p id="pwdErr" class="error" hidden>Invalid password — try again.</p>
+        <small class="modal-note">Default password: <strong>campus123</strong></small>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

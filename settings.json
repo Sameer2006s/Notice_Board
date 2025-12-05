@@ -1,0 +1,5 @@
+{
+    "files.restoreUndoStack": false,
+    "notebook.undoRedoPerCell": false,
+    "chat.undoRequests.restoreInput": false
+}
